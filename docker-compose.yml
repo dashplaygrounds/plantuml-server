@@ -10,11 +10,11 @@ services:
     container_name: plantuml-server
     restart: always
     networks:
-      - spnet
+      - pumlnet
     ports:
       - 9090:8080
     # environment:
     #   - BASE_URL=plantuml
 networks:
-  spnet:
+  pumlnet:
     external: true
