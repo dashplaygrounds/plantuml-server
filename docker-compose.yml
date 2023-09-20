@@ -1,0 +1,20 @@
+version: '3.3'
+# https://github.com/plantuml/plantuml-server/tree/master
+services:
+  plantuml-server:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.jetty
+    # image: plantuml/plantuml-server:jetty-local
+    image: plantuml/plantuml-server:jetty
+    container_name: plantuml-server
+    restart: always
+    networks:
+      - spnet
+    ports:
+      - 9090:8080
+    # environment:
+    #   - BASE_URL=plantuml
+networks:
+  spnet:
+    external: true
